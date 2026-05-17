@@ -2,13 +2,20 @@ import { useState } from 'react';
 import { FiX, FiSave } from 'react-icons/fi';
 
 const TaskForm = ({ task, onSubmit, onClose }) => {
+  const formatDateForInput = (dateString) => {
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) return '';
+    return date.toISOString().split('T')[0];
+  };
+
   const [formData, setFormData] = useState({
-    title: '',
-    description: '',
-    category: 'Other',
-    priority: 'Medium',
-    status: 'To Do',
-    dueDate: ''
+    title: task?.title || '',
+    description: task?.description || '',
+    category: task?.category || 'Other',
+    priority: task?.priority || 'Medium',
+    status: task?.status || 'To Do',
+    dueDate: formatDateForInput(task?.dueDate) || ''
   });
 
   const handleChange = (e) => {

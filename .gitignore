@@ -41,3 +41,5 @@ demo_*.webp
 full_project_verification_*.webp
 intelligence_*.webp
 dashboard_*.webp
+
+.vercel

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { FiMenu, FiX, FiLogOut, FiCheckSquare, FiBarChart2, FiUser } from 'react-icons/fi';
+import { FiMenu, FiX, FiLogOut, FiCheckSquare, FiBarChart2 } from 'react-icons/fi';
 
 const Navbar = () => {
   const { isAuthenticated, user, logout } = useAuth();
